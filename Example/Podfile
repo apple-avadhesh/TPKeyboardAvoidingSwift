@@ -1,0 +1,6 @@
+use_frameworks!
+target 'TPKeyboardAvoidingSwift_Tests' do
+  pod 'TPKeyboardAvoidingSwift', :path => '../'
+  
+  
+end
