@@ -1,4 +1,4 @@
-# TPKeyboardAvoidingSwift
+# TPKeyboardAvoidingSwift (Swift 4.2 - Xcode 10)
 
 [![CI Status](http://img.shields.io/travis/Avadhesh/TPKeyboardAvoidingSwift.svg?style=flat)](https://travis-ci.org/Avadhesh/TPKeyboardAvoidingSwift)
 [![Version](https://img.shields.io/cocoapods/v/TPKeyboardAvoidingSwift.svg?style=flat)](http://cocoapods.org/pods/TPKeyboardAvoidingSwift)
