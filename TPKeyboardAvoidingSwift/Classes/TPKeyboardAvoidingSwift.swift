@@ -2,9 +2,9 @@ import Foundation
 import UIKit
 
 // MARK: - TableView
-class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UITextViewDelegate {
+public class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UITextViewDelegate {
     
-    override var frame:CGRect{
+    override public var frame:CGRect{
         willSet{
             super.frame = frame
         }
@@ -15,7 +15,7 @@ class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UITextViewDel
         }
     }
     
-    override var contentSize:CGSize{
+    override public var contentSize:CGSize{
         willSet(newValue){
             if hasAutomaticKeyboardAvoidingBehaviour() {
                 super.contentSize = newValue
@@ -47,7 +47,7 @@ class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UITextViewDel
         self.setup()
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         setup()
     }
     
@@ -77,19 +77,19 @@ class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UITextViewDel
         return self.TPKeyboardAvoiding_scrollToActiveTextField()
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         if newSuperview != nil {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.TPKeyboardAvoiding_findFirstResponderBeneathView(self)?.resignFirstResponder()
         super.touchesEnded(touches, with: event)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    private func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if !self.focusNextTextField()
         {
             textField.resignFirstResponder()
@@ -97,7 +97,7 @@ class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UITextViewDel
         return true
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         
@@ -134,9 +134,9 @@ private extension TPKeyboardAvoidingTableView
 }
 
 // MARK: - CollectionView
-class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegate {
+public class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegate {
     
-    override var contentSize:CGSize{
+    override public var contentSize:CGSize{
         willSet(newValue){
             if newValue.equalTo(self.contentSize)
             {
@@ -153,7 +153,7 @@ class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegate {
     }
     
     
-    override var frame:CGRect{
+    override public var frame:CGRect{
         willSet{
             super.frame = frame
         }
@@ -179,7 +179,7 @@ class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegate {
         
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         setup()
     }
     
@@ -197,14 +197,14 @@ class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegate {
         return self.TPKeyboardAvoiding_scrollToActiveTextField()
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         if newSuperview != nil {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.TPKeyboardAvoiding_findFirstResponderBeneathView(self)?.resignFirstResponder()
         super.touchesEnded(touches, with: event)
     }
@@ -217,7 +217,7 @@ class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegate {
         return true
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         
@@ -252,16 +252,16 @@ private extension TPKeyboardAvoidingCollectionView
 }
 
 // MARK: - ScrollView
-class TPKeyboardAvoidingScrollView:UIScrollView,UITextFieldDelegate,UITextViewDelegate
+public class TPKeyboardAvoidingScrollView:UIScrollView,UITextFieldDelegate,UITextViewDelegate
 {
-    override var contentSize:CGSize{
+    override public var contentSize:CGSize{
         didSet{
             self.TPKeyboardAvoiding_updateFromContentSizeChange()
         }
     }
     
     
-    override var frame:CGRect{
+    override public var frame:CGRect{
         didSet{
             self.TPKeyboardAvoiding_updateContentInset()
         }
@@ -272,7 +272,7 @@ class TPKeyboardAvoidingScrollView:UIScrollView,UITextFieldDelegate,UITextViewDe
         self.setup()
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         setup()
     }
     
@@ -300,19 +300,19 @@ class TPKeyboardAvoidingScrollView:UIScrollView,UITextFieldDelegate,UITextViewDe
         NotificationCenter.default.removeObserver(self)
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         if newSuperview != nil {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.TPKeyboardAvoiding_findFirstResponderBeneathView(self)?.resignFirstResponder()
         super.touchesEnded(touches, with: event)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    private func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if !self.focusNextTextField()
         {
             textField.resignFirstResponder()
@@ -320,7 +320,7 @@ class TPKeyboardAvoidingScrollView:UIScrollView,UITextFieldDelegate,UITextViewDe
         return true
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView(_:)), object: self)
         
