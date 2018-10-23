@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TPKeyboardAvoidingSwift'
-  s.version          = '3.0'
+  s.version          = '3.1'
   s.summary          = 'TPKeyboardAvoiding in Swift 4.2'
   s.description      = 'Solution for moving text fields out of the way of the keyboard in iOS. - TPKeyboardAvoiding. written in swift. Visit https://github.com/michaeltyson/TPKeyboardAvoiding for Obj-C source'
 
