@@ -30,10 +30,6 @@ public class TPKeyboardAvoidingTableView:UITableView,UITextFieldDelegate, UIText
             super.contentSize = newValue
             self.TPKeyboardAvoiding_updateContentInset()
         }
-        
-        //        didSet{
-        //            self.TPKeyboardAvoiding_updateContentInset()
-        //        }
     }
     
     
@@ -146,10 +142,6 @@ public class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegat
             super.contentSize = newValue
             self.TPKeyboardAvoiding_updateContentInset()
         }
-        
-        //        didSet{
-        //            self.TPKeyboardAvoiding_updateContentInset()
-        //        }
     }
     
     
@@ -163,17 +155,12 @@ public class TPKeyboardAvoidingCollectionView:UICollectionView,UITextViewDelegat
         }
     }
     
-    //    override init(frame: CGRect) {
-    //        super.init(frame: frame)
-    //    }
-    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        //        fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
         self.setup()
         
