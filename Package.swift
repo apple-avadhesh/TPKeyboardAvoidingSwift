@@ -4,6 +4,10 @@ import PackageDescription
 let package = Package(
     name: "TPKeyboardAvoiding",
     platforms: [.iOS(.v10)],
+    products: [
+        .library(name: "TPKeyboardAvoiding",
+                 targets: ["TPKeyboardAvoiding"])
+    ],
     targets: [
         .target(
             name: "TPKeyboardAvoiding",
