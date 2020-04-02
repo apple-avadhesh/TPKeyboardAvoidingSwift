@@ -1,0 +1,6 @@
+framework module TPKeyboardAvoidingSwift {
+  umbrella header "TPKeyboardAvoidingSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

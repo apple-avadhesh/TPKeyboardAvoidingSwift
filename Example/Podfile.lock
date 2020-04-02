@@ -1,0 +1,16 @@
+PODS:
+  - TPKeyboardAvoidingSwift (3.2)
+
+DEPENDENCIES:
+  - TPKeyboardAvoidingSwift (from `../`)
+
+EXTERNAL SOURCES:
+  TPKeyboardAvoidingSwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TPKeyboardAvoidingSwift: ce1a75e0bc3af6b485f8bfa1d0a8320cfc565851
+
+PODFILE CHECKSUM: e6d418898ebdfb0c469483959a90fe03f3cd95e8
+
+COCOAPODS: 1.7.3
