@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "TPKeyboardAvoidingSwift/Sources/TPKeyboardAvoidingSwift/**/*",
+  "source_files": "TPKeyboardAvoidingSwift/Sources/**/*",
   "swift_versions": "5.0",
   "swift_version": "5.0"
 }

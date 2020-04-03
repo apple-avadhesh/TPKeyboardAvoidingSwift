@@ -22,7 +22,7 @@ let package = Package(
             name: "TPKeyboardAvoidingSwift",
             dependencies: []),
         .testTarget(
-            name: "TPKeyboardAvoidingSwiftTests",
+            name: "TPKeyboardTests",
             dependencies: ["TPKeyboardAvoidingSwift"]),
     ]
 )

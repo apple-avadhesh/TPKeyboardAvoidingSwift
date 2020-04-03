@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TPKeyboardAvoidingSwift: 77deb5586b3a0fd75a4f20df36b8950ba2a8c6e2
+  TPKeyboardAvoidingSwift: db49e5502686f467f4f163bf445819f0edf8c4c8
 
 PODFILE CHECKSUM: e6d418898ebdfb0c469483959a90fe03f3cd95e8
 
